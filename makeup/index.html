@@ -7,19 +7,63 @@
 
 <body>
     <form action="index.html" method="post">
-        <input type="text" placeholder="Введите текст">
-
-        <input type="radio" name="sex" value="0" checked>
-        <input type="radio" name="sex" value="1">
-        <input type="radio" name="sex" value="2">
-
-        <input type="checkbox" name="sections[]" value="1">
-        <input type="checkbox" name="sections[]" value="2" checked>
-        <input type="checkbox" name="sections[]" value="3">
-
-        <input type="file">
-
-        <input type="submit" value="Send">
+        <div>
+            <label for="fio">ФИО</label>
+            <input id="fio" type="text" placeholder="Иванов Иван Иванович" name="spam[fio]">
+        </div>
+        <div>
+            <label>
+                Мужской<input type="radio" name="spam[sex]" value="0" checked>
+            </label>
+            <label>
+                Женский<input type="radio" name="spam[sex]" value="1">
+            </label>
+            <label>
+                Не определился<input type="radio" name="spam[sex]" value="2">
+            </label>
+        </div>
+        <div>
+            <label for="city">Выберите город</label>
+            <select name="spam[city]" id="city">
+                <option value="1" selected>Санкт-Петербург</option>
+                <option value="2">Москва</option>
+                <option value="3">Таганрог</option>
+            </select>
+        </div>
+        <div>
+            <fieldset>
+                <legend>
+                    Выберите категории рассылок
+                </legend>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="spam[sections[]]" value="1">
+                            Новости
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="spam[sections[]]" value="2" checked>
+                            Котики
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="spam[sections[]]" value="3">
+                            Рассылки
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+        <div>
+            <label for="comment">Особые пожелания</label>
+            <textarea name="spam[comment]" id="comment"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Send">
+        </div>
     </form>
 </body>
 </html>
